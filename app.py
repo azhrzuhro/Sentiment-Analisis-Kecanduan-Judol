@@ -25,11 +25,11 @@ st.set_page_config(page_title="Prediksi Sentimen Twitter", page_icon="🐦", lay
 # -----------------------------
 st.sidebar.image("Azhar.jpg", width=100)  # Ganti URL dengan foto profilmu jika ada
 st.sidebar.markdown("""
-## 👤 Profil Pembuat
-**Nama:** AZHAR ZUHRO  
+## Profil Pembuat
+**Nama:** Azhar Zuhro  
 **Email:** azharzuhro74@gmail.com.com  
 **GitHub:** [github.com/azhrzuhro](https://github.com/azhrzuhro)  
-**LinkedIn:** [linkedin.com/in/azhar-zuhro)  
+**LinkedIn:** [linkedin.com/in/azhar-zuhro](https://www.linkedin.com/in/azhar-zuhro)
 """)
 
 # -----------------------------
