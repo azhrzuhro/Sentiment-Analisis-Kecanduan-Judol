@@ -23,13 +23,13 @@ st.set_page_config(page_title="Prediksi Sentimen Twitter", page_icon="🐦", lay
 # -----------------------------
 # Sidebar - Profil Pembuat
 # -----------------------------
-st.sidebar.image("https://cdn-icons-png.flaticon.com/512/194/194938.png", width=100)  # Ganti URL dengan foto profilmu jika ada
+st.sidebar.image("Azhar.jpg", width=100)  # Ganti URL dengan foto profilmu jika ada
 st.sidebar.markdown("""
 ## 👤 Profil Pembuat
-**Nama:** John Doe  
-**Email:** johndoe@example.com  
-**GitHub:** [github.com/johndoe](https://github.com/johndoe)  
-**LinkedIn:** [linkedin.com/in/johndoe](https://linkedin.com/in/johndoe)  
+**Nama:** AZHAR ZUHRO  
+**Email:** azharzuhro74@gmail.com.com  
+**GitHub:** [github.com/azhrzuhro](https://github.com/azhrzuhro)  
+**LinkedIn:** [linkedin.com/in/azhar-zuhro)  
 """)
 
 # -----------------------------
