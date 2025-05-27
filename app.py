@@ -11,8 +11,8 @@ tfidf = joblib.load('tfidf.pkl')
 # Label dibalik: 0 = Positif, 1 = Negatif
 # -----------------------------
 label_map = {
-    0: "Sentimen Positif 😊",
-    1: "Sentimen Negatif 😠"
+    0: "Sentimen Positif",
+    1: "Sentimen Negatif"
 }
 
 # -----------------------------
@@ -20,7 +20,21 @@ label_map = {
 # -----------------------------
 st.set_page_config(page_title="Prediksi Sentimen Twitter", page_icon="🐦", layout="centered")
 
-# Logo Twitter (dari URL)
+# -----------------------------
+# Sidebar - Profil Pembuat
+# -----------------------------
+st.sidebar.image("https://cdn-icons-png.flaticon.com/512/194/194938.png", width=100)  # Ganti URL dengan foto profilmu jika ada
+st.sidebar.markdown("""
+## 👤 Profil Pembuat
+**Nama:** John Doe  
+**Email:** johndoe@example.com  
+**GitHub:** [github.com/johndoe](https://github.com/johndoe)  
+**LinkedIn:** [linkedin.com/in/johndoe](https://linkedin.com/in/johndoe)  
+""")
+
+# -----------------------------
+# Logo dan Judul
+# -----------------------------
 st.markdown(
     """
     <div style="text-align: center;">
@@ -51,9 +65,9 @@ if st.button("🔍 Prediksi Sentimen"):
 
         # Gaya warna hasil prediksi
         if prediction == 0:
-            st.success(f"✅ **{prediction_text}**")
+            st.success(f"**{prediction_text}**")
         else:
-            st.error(f"❌ **{prediction_text}**")
+            st.error(f"**{prediction_text}**")
 
 # -----------------------------
 # Footer
@@ -61,7 +75,7 @@ if st.button("🔍 Prediksi Sentimen"):
 st.markdown("""
 <hr>
 <div style='text-align: center; color: grey;'>
-    Dibuat dengan ❤️ untuk analisis teks media sosial<br>
-    Powered by TF-IDF + Logistic Regression
+    Dibuat untuk analisis teks media sosial<br>
+    Created by Azhar Zuhro
 </div>
 """, unsafe_allow_html=True)
