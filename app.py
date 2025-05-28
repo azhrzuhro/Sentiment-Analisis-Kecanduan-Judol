@@ -8,7 +8,7 @@ model = joblib.load('best_logistic_model.pkl')
 tfidf = joblib.load('tfidf.pkl')
 
 # -----------------------------
-# Label dibalik: 0 = Positif, 1 = Negatif
+
 # -----------------------------
 label_map = {
     0: "Sentimen Positif",
