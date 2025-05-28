@@ -8,12 +8,11 @@ model = joblib.load('best_logistic_model.pkl')
 tfidf = joblib.load('tfidf.pkl')
 
 # -----------------------------
-# Label dibalik: 0 = Positif, 1 = Negatif, 2 = Netral
+# Label dibalik: 0 = Positif, 1 = Negatif
 # -----------------------------
 label_map = {
     0: "Sentimen Positif",
-    1: "Sentimen Negatif",
-    2: "Sentimen Netral"
+    1: "Sentimen Negatif"
 }
 
 # -----------------------------
@@ -24,11 +23,11 @@ st.set_page_config(page_title="Prediksi Sentimen Twitter", page_icon="🐦", lay
 # -----------------------------
 # Sidebar - Profil Pembuat
 # -----------------------------
-st.sidebar.image("Azhar.jpg", width=100)
+st.sidebar.image("Azhar.jpg", width=100)  # Ganti URL dengan foto profilmu jika ada
 st.sidebar.markdown("""
 ## Profil Pembuat
 **Nama:** Azhar Zuhro  
-**Email:** azharzuhro74@gmail.com  
+**Email:** azharzuhro74@gmail.com.com  
 **GitHub:** [github.com/azhrzuhro](https://github.com/azhrzuhro)  
 **LinkedIn:** [linkedin.com/in/azhar-zuhro](https://www.linkedin.com/in/azhar-zuhro)
 """)
@@ -67,10 +66,8 @@ if st.button("🔍 Prediksi Sentimen"):
         # Gaya warna hasil prediksi
         if prediction == 0:
             st.success(f"**{prediction_text}**")
-        elif prediction == 1:
+        else:
             st.error(f"**{prediction_text}**")
-        elif prediction == 2:
-            st.info(f"**{prediction_text}**")
 
 # -----------------------------
 # Footer
