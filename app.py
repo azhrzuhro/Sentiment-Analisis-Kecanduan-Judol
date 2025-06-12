@@ -11,10 +11,9 @@ tfidf = joblib.load('tfidf.pkl')
 
 # -----------------------------
 label_map = {
-    0: "Sentimen Positif",
-    1: "Sentimen Negatif"
+    0: "Sentimen Negatif",   
+    1: "Sentimen Positif"  
 }
-
 # -----------------------------
 # Desain halaman
 # -----------------------------
@@ -54,7 +53,7 @@ user_input = st.text_area("Contoh: Aku sangat senang dengan layanan ini!", heigh
 
 # -----------------------------
 # Tombol Prediksi
-# -----------------------------
+
 if st.button("🔍 Prediksi Sentimen"):
     if user_input.strip() == "":
         st.warning("⚠️ Tolong masukkan teks terlebih dahulu.")
@@ -63,11 +62,11 @@ if st.button("🔍 Prediksi Sentimen"):
         prediction = model.predict(input_vector.toarray())[0]
         prediction_text = label_map.get(prediction, "Label tidak dikenal")
 
-        # Gaya warna hasil prediksi
+        # Gaya warna hasil prediksi dibalik
         if prediction == 0:
-            st.success(f"**{prediction_text}**")
+            st.error(f"**{prediction_text}**")   
         else:
-            st.error(f"**{prediction_text}**")
+            st.success(f"**{prediction_text}**")
 
 # -----------------------------
 # Footer
