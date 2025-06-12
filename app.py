@@ -1,3 +1,5 @@
+import joblib
+
 # -----------------------------
 # Load model dan vectorizer
 # -----------------------------
