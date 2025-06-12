@@ -1,6 +1,3 @@
-import streamlit as st
-import joblib
-
 # -----------------------------
 # Load model dan vectorizer
 # -----------------------------
@@ -11,9 +8,10 @@ tfidf = joblib.load('tfidf.pkl')
 
 # -----------------------------
 label_map = {
-    0: "Sentimen Negatif",   
-    1: "Sentimen Positif"  
+    0: "Sentimen Positif",
+    1: "Sentimen Negatif"
 }
+
 # -----------------------------
 # Desain halaman
 # -----------------------------
@@ -53,7 +51,7 @@ user_input = st.text_area("Contoh: Aku sangat senang dengan layanan ini!", heigh
 
 # -----------------------------
 # Tombol Prediksi
-
+# -----------------------------
 if st.button("🔍 Prediksi Sentimen"):
     if user_input.strip() == "":
         st.warning("⚠️ Tolong masukkan teks terlebih dahulu.")
@@ -62,11 +60,11 @@ if st.button("🔍 Prediksi Sentimen"):
         prediction = model.predict(input_vector.toarray())[0]
         prediction_text = label_map.get(prediction, "Label tidak dikenal")
 
-        # Gaya warna hasil prediksi dibalik
+        # Gaya warna hasil prediksi
         if prediction == 0:
-            st.error(f"**{prediction_text}**")   
-        else:
             st.success(f"**{prediction_text}**")
+        else:
+            st.error(f"**{prediction_text}**")
 
 # -----------------------------
 # Footer
